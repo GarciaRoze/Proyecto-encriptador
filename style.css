@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background: linear-gradient(198deg, rgba(34,94,195,0.7595413165266106) 0%, rgba(253,45,45,0.5830707282913166) 100%);
+    position: relative;
+    min-height: 100vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 40px 0px 40px;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 2px solid #bbb;
+}
+
+header img{
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.logo2{
+    height: 8%;
+    width: 6%;
+}
+
+.elementos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+}
+
+.container-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 600px;
+    
+}
+
+.container-1 p{
+    margin: 15px;
+    font-weight: bold;
+}
+
+#inputtexto{
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 15px;
+    
+}
+
+#btn-encriptar{
+    width: 110px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 15px ;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(219, 15, 15);
+    background-color: rgba(142, 212, 218, 0.527);
+}
+
+#btn-desencriptar{
+    width: 110px;
+    height: 40px;
+    border-radius: 15px ;
+    font-size: 15px;
+    color: rgb(219, 15, 15);
+    font-weight: bold;
+    background-color: rgba(142, 212, 218, 0.527);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 600px;
+}
+
+#texto2{
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+#imgDer{
+    width: 40%;
+}
+
+#texto{
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+#copiar{
+    width: 100px;
+    height: 40px;
+    border-radius: 15px ;
+    font-size: 15px;
+    margin: 20px;
+    font-weight: bold;
+    color: rgb(219, 15, 15);
+    background-color: rgba(142, 212, 218, 0.527);
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(42, 182, 207, 0.336);
+    font-size: 20px;
+    color: rgb(22, 12, 12);
+    margin-top: auto;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}

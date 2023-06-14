@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Challenge Encriptador</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <header>
+            <img class="logoImg" src="img/logo.png">
+            <marquee><h1 class="tittle">Encriptador Alura latam + ONE </h1></marquee>
+            <img class="logo2" src="img/descarga.png">
+    </header>
+        <div class="elementos">
+            <div class="container-1">
+                <textarea placeholder="Ingrese el texto que desea encriptar o desencriptar" id="inputtexto"  encriptar()="Text ()"></textarea>
+                <p>Sólo letras minúsculas y sin acento</p>
+                <div class="botones">
+                <button type="button" id="btn-encriptar" onclick="encriptar()">Encriptar</button>
+                <button type="button" id="btn-desencriptar" onclick="desencriptar()">desencriptar!</button>
+                </div>
+            </div>
+            <div class="container">
+                <textarea id="texto2" >Ingrese el texto aquí</textarea>
+                <img src="img/image.png" id="imgDer">
+                <h2 id="texto">Ningún mensaje fue encontrado</h2>
+                <button type="button" id="copiar" onclick="copia()">¡Copiar!</button>
+            </div>
+        </div>
+    <footer>
+        <h3> &#169 todos los derechos reservados ONE + Alura Latam G5 2023, Hello ONE G5 </h3>
+        <h5>Desarrollado por Roselia García Adame</h5>
+    </footer>
+</body>
+</html>
