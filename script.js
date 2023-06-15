@@ -1,39 +1,86 @@
-function encriptar() {
-    var texto = document.getElementById("inputtexto").value.toLowerCase();
-    //i es para que afecte a tanto mayus como minus
-    //g afecta a toda la linea
-    //m afecta a multiples lineas
-    var txtcifrado = texto.replace(/e/igm,"enter");
-    var txtcifrado = txtcifrado.replace(/o/igm,"ober");
-    var txtcifrado = txtcifrado.replace(/i/igm,"imes");
-    var txtcifrado = txtcifrado.replace(/a/igm,"ai");
-    var txtcifrado = txtcifrado.replace(/u/igm,"ufat");
-    document.getElementById("imgDer").style.display = "none";
-    document.getElementById("texto").style.display = "none";
-    document.getElementById("copiar").style.display = "show";
-    document.getElementById("texto2").innerHTML = txtcifrado;
-    document.getElementById("inputtexto").innerHTML = " ";
-    document.getElementById("copiar").style.display = "inherit";
+const textArea = document.querySelector("#inputtexto");
+const mensaje = document.querySelector("#texto2");
+const copia = document.querySelector("#copiar");
+copia.style.display = "none"
+
+
+function validarTexto(){
+    let textoEscrito = document.querySelector("#inputtexto").value;
+    let validador = textoEscrito.match(/^[a-z ]*$/);
+
+    if(!validador || validador === 0) {
+        alert("Solo se permiten letras minúsculas y sin acentos",)
+        location.reload();
+        return true;
+    }
 }
 
-    function desencriptar() {
-    var texto = document.getElementById("inputtexto").value.toLowerCase();
-    var txtcifrado = texto.replace(/enter/igm,"e");
-    var txtcifrado = txtcifrado.replace(/ober/igm,"o");
-    var txtcifrado = txtcifrado.replace(/imes/igm,"i");
-    var txtcifrado = txtcifrado.replace(/ai/igm,"a");
-    var txtcifrado = txtcifrado.replace(/ufat/igm,"u");
-    document.getElementById("imgDer").style.display = "none";
-    document.getElementById("texto").style.display = "none";
-    document.getElementById("copiar").style.display = "show";
-    document.getElementById("texto2").innerHTML = txtcifrado;
-    document.getElementById("inputtexto").innerHTML = " ";
-    document.getElementById("copiar").style.display = "inherit";
+
+function btnEncriptar(){
+    if(!validarTexto()) {
+        const textoEncriptado = encriptar(textArea.value)
+        mensaje.value = textoEncriptado
+        mensaje.style.backgroundImage = "none"
+        textArea.value = "";
+        copia.style.display = "block"
+    
+    }
 }
 
-    function copia() {
-    var contenido = document.querySelector("#texto2");
-    contenido.select();
-    document.execCommand('copy');
-    alert("Copied!");
+//Laves de encriptacion
+// `La letra "e" se convierte en "enter"`
+// `La letra "i" se convierte en "imes"`
+// `La letra "a" se convierte en "ai"`
+// `La letra "o" se convierte en "ober"`
+// `La letra "u" se convierte en "ufat"`
+
+
+function encriptar(stringEncriptada){
+    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+    stringEncriptada = stringEncriptada.toLowerCase()
+
+    for(let i = 0; i < matrizCodigo.length; i++){
+        if(stringEncriptada.includes(matrizCodigo[i][0])){
+            stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1])
+
+        }
+
+    }
+    return stringEncriptada
 }
+
+
+
+function btnDesencriptar(){
+    const textoEncriptado = desencriptar(textArea.value)
+    mensaje.value = textoEncriptado
+    textArea.value = "";
+    
+}
+
+
+function desencriptar(stringDesencriptada){
+    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+    stringDesencriptada = stringDesencriptada.toLowerCase()
+
+    for(let i = 0; i < matrizCodigo.length; i++){
+        if(stringDesencriptada.includes(matrizCodigo[i][1])){
+            stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1] , matrizCodigo[i][0])
+
+        }
+
+    }
+    return stringDesencriptada
+}
+
+
+function copiar(){
+    mensaje.select();
+    navigator.clipboard.writeText(mensaje.value)
+    mensaje.value = "";
+    alert("Texto Copiado")
+    
+}
+
+
+
