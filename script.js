@@ -87,7 +87,7 @@ function copiar(){
         text: 'Texto copiado',
         icon: 'success',
         confirmButtonText: 'Ok'
-      })
+        })
 }
 
 
