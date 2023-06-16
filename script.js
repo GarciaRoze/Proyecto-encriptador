@@ -8,8 +8,12 @@ function validarTexto(){
     let textoEscrito = document.querySelector("#inputtexto").value;
     let validador = textoEscrito.match(/^[a-z ]*$/);
     if(!validador || validador === 0) {
-        swal.fire('Solo se permiten letras minúsculas y sin acentos')
-        location.reload();
+        swal.fire({
+            title: 'Error!',
+            text: 'Solo se permiten letras minúsculas y sin acentos',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          })
         return true;
     }
 
@@ -78,8 +82,12 @@ function copiar(){
     mensaje.select();
     navigator.clipboard.writeText(mensaje.value)
     mensaje.value = "";
-    alert("Texto Copiado")
-    
+    swal.fire({
+        title: 'Copied Text',
+        text: 'Texto copiado',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      })
 }
 
 
