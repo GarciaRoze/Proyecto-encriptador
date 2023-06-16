@@ -7,14 +7,14 @@ copia.style.display = "none"
 function validarTexto(){
     let textoEscrito = document.querySelector("#inputtexto").value;
     let validador = textoEscrito.match(/^[a-z ]*$/);
-
     if(!validador || validador === 0) {
-        alert("Solo se permiten letras minúsculas y sin acentos",)
+        swal.fire('Solo se permiten letras minúsculas y sin acentos')
         location.reload();
         return true;
     }
-}
 
+
+}
 
 function btnEncriptar(){
     if(!validarTexto()) {
